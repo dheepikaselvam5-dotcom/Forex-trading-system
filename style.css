@@ -1,0 +1,28 @@
+body{
+background:#020617;
+color:white;
+font-family:Segoe UI;
+margin:0;
+}
+.auth{
+width:360px;
+margin:120px auto;
+padding:30px;
+background:#0f172a;
+border-radius:12px;
+}
+input,select,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:8px;
+border:none;
+}
+button{background:#38bdf8;font-weight:bold}
+.top{padding:15px;background:#020617;display:flex;justify-content:space-between}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;padding:20px}
+.card{background:#0f172a;padding:20px;border-radius:12px}
+table{width:100%;border-collapse:collapse}
+td,th{padding:8px;text-align:center}
+@media(max-width:768px){canvas{width:100%}}
+
