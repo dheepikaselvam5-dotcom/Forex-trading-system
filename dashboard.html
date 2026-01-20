@@ -1,0 +1,94 @@
+<link rel="stylesheet" href="static/style.css">
+<script src="static/main.js"></script>
+
+<div class="top">
+    <h2>Forex Dashboard</h2>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="grid">
+
+<div class="card">
+    <h3>Balance</h3>
+    <h1>₹{{balance}}</h1>
+</div>
+
+<div class="card">
+    <h3>TRP Score</h3>
+    <h1>{{trp}}%</h1>
+</div>
+
+<div class="card">
+    <h3>Risk Analysis</h3>
+    <h2>{{risk}}</h2>
+    <p>{{risk_percent}}% Exposure</p>
+</div>
+
+<div class="card">
+    <h3>AI Assistant</h3>
+    <button onclick="predict()">Predict</button>
+    <p id="ai"></p>
+</div>
+
+<div class="card">
+    <h3>Trade</h3>
+    <form method="post">
+        <select name="currency">
+            <option>USD</option>
+            <option>EUR</option>
+        </select>
+        <select name="action">
+            <option>BUY</option>
+            <option>SELL</option>
+        </select>
+        <input name="amount" placeholder="Amount" required>
+        <button>Execute</button>
+    </form>
+</div>
+
+<!-- ✅ Currency Converter -->
+<div class="card">
+    <h3>Currency Converter</h3>
+    <select id="from">
+        <option>USD</option>
+        <option>EUR</option>
+        <option>INR</option>
+        <option>GBP</option>
+        <option>JPY</option>
+    </select>
+
+    <select id="to">
+        <option>INR</option>
+        <option>USD</option>
+        <option>EUR</option>
+        <option>GBP</option>
+    </select>
+
+    <input id="amount" placeholder="Enter amount">
+    <button onclick="convert()">Convert</button>
+
+    <h4 id="result"></h4>
+</div>
+
+</div>
+
+<div class="card">
+    <h3>Market Trend</h3>
+    <canvas id="chart" width="700" height="300"></canvas>
+</div>
+
+<div class="card">
+    <h3>Trade History</h3>
+    <table>
+        <tr><th>Currency</th><th>Action</th><th>Amount</th><th>Profit</th></tr>
+        {% for t in trades %}
+        <tr>
+            <td>{{t[0]}}</td>
+            <td>{{t[1]}}</td>
+            <td>{{t[2]}}</td>
+            <td>{{t[3]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
